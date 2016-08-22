@@ -12,6 +12,10 @@
 
 @interface HWPayPasswordView : UIView
 
+@property (nonatomic, strong) void(^passwordBlock)(NSString *password);
+/**
+ *  elementCount 显示框的个数，默认最少是5个
+ */
 @property (nonatomic, assign) UInt8 elementCount;
 @property (nonatomic, strong) UIColor *lineColor;
 

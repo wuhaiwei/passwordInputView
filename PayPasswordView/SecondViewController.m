@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "HWPayPasswordView.h"
 
 @interface SecondViewController ()
 
@@ -22,7 +23,18 @@
 
 - (void)setupUI
 {
+    HWPayPasswordView *passwordView = [[HWPayPasswordView alloc] initWithFrame:CGRectMake(30, 100, self.view.bounds.size.width - 60, 50)];
+    passwordView.elementCount = 6;
+    [self.view addSubview:passwordView];
     
+    passwordView.passwordBlock = ^(NSString *password){
+        NSLog(@"%@",password);
+    };
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
 @end
