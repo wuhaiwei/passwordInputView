@@ -15,6 +15,7 @@
 		FD40151E1D6AA3620012610A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD40151D1D6AA3620012610A /* Assets.xcassets */; };
 		FD4015211D6AA3620012610A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD40151F1D6AA3620012610A /* LaunchScreen.storyboard */; };
 		FD40152A1D6AA8E60012610A /* PayPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4015291D6AA8E60012610A /* PayPasswordView.m */; };
+		FD4015301D6AE51F0012610A /* HWPayPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD40152F1D6AE51F0012610A /* HWPayPasswordView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		FD4015221D6AA3620012610A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD4015281D6AA8E60012610A /* PayPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPasswordView.h; sourceTree = "<group>"; };
 		FD4015291D6AA8E60012610A /* PayPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayPasswordView.m; sourceTree = "<group>"; };
+		FD40152E1D6AE51F0012610A /* HWPayPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPayPasswordView.h; sourceTree = "<group>"; };
+		FD40152F1D6AE51F0012610A /* HWPayPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPayPasswordView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				FD4015181D6AA3620012610A /* SecondViewController.m */,
 				FD4015281D6AA8E60012610A /* PayPasswordView.h */,
 				FD4015291D6AA8E60012610A /* PayPasswordView.m */,
+				FD40152E1D6AE51F0012610A /* HWPayPasswordView.h */,
+				FD40152F1D6AE51F0012610A /* HWPayPasswordView.m */,
 				FD40151A1D6AA3620012610A /* Main.storyboard */,
 				FD40151D1D6AA3620012610A /* Assets.xcassets */,
 				FD40151F1D6AA3620012610A /* LaunchScreen.storyboard */,
@@ -164,6 +169,7 @@
 				FD4015161D6AA3620012610A /* FirstViewController.m in Sources */,
 				FD4015101D6AA3620012610A /* main.m in Sources */,
 				FD40152A1D6AA8E60012610A /* PayPasswordView.m in Sources */,
+				FD4015301D6AE51F0012610A /* HWPayPasswordView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
