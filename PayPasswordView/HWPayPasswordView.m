@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) UITextField *passwordTextField;
 @property (nonatomic, strong) NSMutableArray *dataImageViewArray;
+@property (nonatomic, strong) NSMutableArray *verticalArray;
+@property (nonatomic, strong) NSMutableArray *horizontalArray;
 
 @end
 
@@ -25,6 +27,12 @@
         [self addSubview:self.passwordTextField];
     }
     return self;
+}
+
+- (void)clearPassword
+{
+    self.passwordTextField.text = @"";
+    [self setDotWithCount:self.passwordTextField.text.length];
 }
 
 #pragma mark - setter getter
@@ -59,6 +67,22 @@
     return _dataImageViewArray;
 }
 
+- (NSMutableArray *)verticalArray
+{
+    if (!_verticalArray) {
+        _verticalArray = [NSMutableArray arrayWithCapacity:self.elementCount + 1];
+    }
+    return _verticalArray;
+}
+
+- (NSMutableArray *)horizontalArray
+{
+    if (!_horizontalArray) {
+        _horizontalArray = [NSMutableArray arrayWithCapacity:2];
+    }
+    return _horizontalArray;
+}
+
 - (void)setElementCount:(UInt8)elementCount
 {
     _elementCount = (elementCount > 5) ? elementCount : 5;
@@ -74,11 +98,34 @@
         [self.dataImageViewArray addObject:imageView];
         [self insertSubview:imageView aboveSubview:self.passwordTextField];
     }
+    
+    for (NSUInteger index = 0; index < _elementCount + 1; index ++) {
+        UIView *line = [[UIView alloc] init];
+        line.backgroundColor = [UIColor blackColor];
+        line.userInteractionEnabled = NO;
+        [self.verticalArray addObject:line];
+        [self insertSubview:line aboveSubview:self.passwordTextField];
+    }
+    
+    for (NSUInteger index = 0; index < 2; index ++) {
+        UIView *line = [[UIView alloc] init];
+        line.backgroundColor = [UIColor blackColor];
+        line.userInteractionEnabled = NO;
+        [self.horizontalArray addObject:line];
+        [self insertSubview:line aboveSubview:self.passwordTextField];
+    }
 }
 
 - (void)setLineColor:(UIColor *)lineColor
 {
     _lineColor = lineColor;
+    for (UIView *line in self.verticalArray) {
+        line.backgroundColor = _lineColor;
+    }
+    
+    for (UIView *line in self.horizontalArray) {
+        line.backgroundColor = _lineColor;
+    }
 }
 
 
@@ -96,6 +143,19 @@
         imageView.layer.masksToBounds = YES;
         x = index * width;
         imageView.frame = CGRectMake(x, y, width, height);
+    }
+    
+    for (NSUInteger index = 0; index < self.verticalArray.count; index ++) {
+        UIView *line = [self.verticalArray objectAtIndex:index];
+        x = width * index;
+        line.frame = CGRectMake(x, y, 1, height);
+    }
+    
+    for (NSUInteger index = 0; index < self.horizontalArray.count; index ++) {
+        UIView *line = [self.horizontalArray objectAtIndex:index];
+        x = 0;
+        y = index * height;
+        line.frame = CGRectMake(x, y, self.bounds.size.width, 1);
     }
 }
 

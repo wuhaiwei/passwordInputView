@@ -25,6 +25,7 @@
 {
     HWPayPasswordView *passwordView = [[HWPayPasswordView alloc] initWithFrame:CGRectMake(30, 100, self.view.bounds.size.width - 60, 50)];
     passwordView.elementCount = 6;
+    passwordView.lineColor = [UIColor blueColor];
     [self.view addSubview:passwordView];
     
     passwordView.passwordBlock = ^(NSString *password){

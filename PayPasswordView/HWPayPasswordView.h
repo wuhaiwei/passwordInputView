@@ -17,6 +17,15 @@
  *  elementCount 显示框的个数，默认最少是5个
  */
 @property (nonatomic, assign) UInt8 elementCount;
+/**
+ *  默认是黑色的
+ */
 @property (nonatomic, strong) UIColor *lineColor;
+
+
+/**
+ *  清除密码框
+ */
+- (void)clearPassword;
 
 @end
